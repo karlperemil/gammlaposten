@@ -1,0 +1,37 @@
+mixin puff(data,colorclass)
+  if data.image.url
+    .puff(style='background-image: url("#{data._.image.fit(800,600)}")')
+      .puff-container(class='#{colorclass}', link-class='#{data.link}')
+        h3 #{data.quote}
+        if data.link
+          p #{data.ingress  + ' '}
+            if data.linktext
+              a(href="#{data.link}") #{data.linktext} &#187;
+            else
+              a(href="#{data.link}") #{data.link} &#187;
+        else
+          p #{data.ingress}
+
+  else
+    +puff_expanded(data, colorclass)
+
+mixin puff_expanded(data, colorclass)
+  .puff.is-expanded: .puff-container(class='#{colorclass}', link-class='#{data.link}')
+    .vertical-align: .vertical-align-cont
+      h2 #{data.quote}
+      if data.link
+        p #{(data.ingress || '') + ' '}
+          if data.linktext
+            a(href="#{data.link}") #{data.linktext} &#187;
+          else
+            a(href="#{data.link}") #{data.link} &#187;
+      else
+        p #{data.ingress}
+
+mixin puff_berattelse(data, colorclass)
+  if data.image
+    .puff(style='background-image: url("#{data._.image.fit(800,600)}")')
+      .puff-container(class='#{colorclass}', link-class='/berattelser/#{ data.slug }')
+        a(href="/berattelser/#{ data.slug }")
+          h3.quote ”#{data.quote}”
+          p.puff-read-more: a(href="/berattelser/#{ data.slug }") Läs mer &#187;

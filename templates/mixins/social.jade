@@ -1,0 +1,17 @@
+mixin share-buttons(url, body, twitter_body)
+  .social-buttons
+    - var facebook_url = encodeURIComponent(url)
+    - var facebook_title = encodeURIComponent(body)
+    a.social.is-facebook(href='https://www.facebook.com/sharer/sharer.php?u=#{facebook_url}&t=#{facebook_title}', target='_blank')
+      .fa.fa-facebook &nbsp;
+    
+    - var twittercopy = encodeURIComponent(twitter_body)
+    - var hashtags = copy.share_twitter_hashtag
+    - var twitterurl = encodeURIComponent(url)
+    a.social.is-twitter(href='https://twitter.com/intent/tweet?text=#{twittercopy}&url=#{twitterurl}&hashtags=#{hashtags}', target='_blank')
+      .fa.fa-twitter &nbsp;
+    
+    - var mailsubject = copy.share_email_subject
+    - var mailbody = copy.share_email_body
+    a.social.is-mail(href='mailto:?subject=#{mailsubject}&body=#{mailbody}', target='_blank')
+      .fa.fa-envelope-o &nbsp;

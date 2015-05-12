@@ -1,0 +1,52 @@
+html
+  box-sizing: border-box
+
+button
+  outline: 0
+  padding: .5em 2em
+  font-size: 1.4em
+  text-transform: uppercase
+  border: 0
+  color: white
+  background: $yellow
+  cursor: pointer
+  font-family: folio-bold
+  &:hover
+    background: $pink-light
+
+img
+  max-width: 100%
+
+a
+  text-decoration: none
+  color: white
+
+a:hover
+  text-decoration: underline
+
+*, *:before, *:after
+  box-sizing: inherit
+
+.hidden
+  display: none
+
+.visible
+  display: inherit
+
+.vertical-align
+  align(vertical)
+  width: 100%
+
+.spinner
+  background-image: url('../img/spinner.gif')
+  width: 48px
+  height: 48px
+  background-repeat: no-repeat
+  margin: auto
+  margin-top: 1em
+
+.error
+  margin-bottom: 1em
+
+.cf
+  cf()

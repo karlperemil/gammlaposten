@@ -1,0 +1,55 @@
+input, textarea, select
+  &.is-error {border-color: #E92F45}
+  dark-text()
+  display: block
+  width: 100%
+  padding: 0.65em 1em
+  box-sizing: border-box
+  border: 3px solid transparent
+  border-radius: 0
+  background: #f1f1f1
+  margin-bottom: 0.5em
+  transition: border 100ms
+  font-weight: 400
+  font-size: 1em
+  font-family: font-form
+  color: $purple
+  cursor: text
+
+textarea:focus
+input[type=password]:focus
+input[type=email]:focus
+input[type=phone]:focus
+input[type=text]:focus
+input[type=textfield]:focus
+  outline: none
+  background: #fff
+
+label
+  display: block
+  margin-bottom: 0.3em
+  padding-top: 0.3em
+  cursor: pointer
+
+input[type=submit]
+  cursor: pointer
+
+input[type=checkbox]
+  display: none
+  width: 2em
+  height: 2em
+  cursor: pointer
+  float: left
+  margin-right: 0.7em
+
+input[type=checkbox]:checked:after
+  @extends input[type=checkbox]
+  absolute: left 0 top 0
+  text-align: center
+  line-height: 2em
+  text-indent: -2px
+  content: '✔'
+  display: block
+
+input[type=checkbox]:active
+  border-color: accent

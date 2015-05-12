@@ -1,0 +1,13 @@
+section.signup
+  .vertical-align
+    h3(data-id="home_signup_header") !{copy.home_signup_header}
+    p(data-id="home_signup_ingress") !{copy.home_signup_ingress}
+    p#signup-email-error * Ogilitig E-post ↓
+    input#form-email(type='textfield', placeholder='Din e-post')
+    .signup-checkbox-container
+      input#form-checkbox(type='checkbox' value='member')
+      label(for='form-checkbox')
+        | <span></span>Jag är medlem i Vision
+    button.button#form-send.form-send Skicka
+    p.pul
+      | Genom att klicka 'Skicka' så godkänner du att vi behandlar din uppgifter enligt <a href='http://www.datainspektionen.se/lagar-och-regler/personuppgiftslagen/' target='_blank'>PUL</a>

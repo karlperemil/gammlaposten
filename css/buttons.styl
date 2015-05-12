@@ -1,0 +1,50 @@
+ui()
+  no-select()
+  transition: all 100ms
+  cursor: pointer
+  text-decoration: none
+  display: inline-block
+  line-height: 1
+  box-sizing: border-box
+
+button()
+  ui()
+  text-transform: none
+  padding: 0.66em 2.5em 0.5em
+  margin-bottom: 0.8em
+  font-family: font-button
+  color: #240064
+  background: $yellow
+  border-radius: 1em
+  appearance: none
+  -webkit-appearance: none
+  box-shadow: 0 0.17em 0.3em rgba(0, 0, 0, 0.25)
+
+  &:hover
+    background: alpha($yellow,.9)
+    color: #411F7E
+
+  &:active
+    background: lighten(#E4BE00, 5%)
+    transition: none
+
+  &.has-no-margin
+    margin-bottom: 0
+
+  &.is-pink
+    &:hover { background: lighten(pink, 10%) }
+    background: pink
+
+  &.is-yellow
+    &:hover { background: lighten($yellow, 10%) }
+    background: $yellow
+
+.button,
+.is-button
+  button()
+
+.button.purple
+  background-color: $purple
+  color: white
+  &:hover
+    background-color alpha($purple, .8)

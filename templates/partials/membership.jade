@@ -1,0 +1,21 @@
+section.membership: .wrapper.is-wide
+  .membership-info
+    h3.membership-title(data-id='member_header') !{copy.member_header}
+    
+    .memership-list
+      .membership-list-item(data-id='member_p_1') !{copy.member_p_1}
+      .membership-list-item(data-id='member_p_2') !{copy.member_p_2}
+      .membership-list-item(data-id='member_p_3') !{copy.member_p_3}
+      
+  form.membership-form(target="_blank", method="post", action="https://vision.se/bli-medlem?utm_source=frantidenssocialtjanst&utm_medium=link&utm_campaign=framtidenssocialtjanst")
+    .fancy-input.is-wide
+      span(class="help-block fancy-placeholder-text") Personnr (ex 19801122-3456) *
+      input#member-psn(type="text", name="psn", placeholder='Personnr (ex 19801122-3456) *')
+    .fancy-input.is-wide
+        span(class="help-block fancy-placeholder-text") Förnamn *
+        input#member-firstname(type="text", name="name", placeholder='Förnamn *')
+    .fancy-input.is-wide
+        span(class="help-block fancy-placeholder-text") Efternamn *
+        input#member-lastname(type="text", name="lastname", placeholder='Efternamn *')
+    .cf
+      input#member-send.membership-button.button(type="submit", value="Bli medlem nu")

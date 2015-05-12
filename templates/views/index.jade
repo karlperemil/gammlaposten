@@ -1,0 +1,42 @@
+extends ../layouts/default
+
+include ../mixins/header
+include ../mixins/puff
+
+block facebook
+  meta(property="og:site_name" content="Vad ska du och dina kollegor förändra på er arbetsplats?")
+  meta(property="og:title" content="Framtidenssocialtjänst")
+  meta(property="og:type" content="article")
+  meta(property="og:url" content="http://www.framtidenssocialtjanst.se")
+  meta(property="og:image" content="http://www.framtidenssocialtjanst.se/img/facebook-og.jpg")
+  meta(property="og:locale" content="sv_SE")
+  meta(property="og:description" content="Vi har samlat verktyg och berättelser från medarbetare i socialtjänsten som har tagit initiativ för att förbättra arbetsmiljön. Vad behöver bli bättre på din arbetsplats?")  
+  
+block content
+  +header('home')
+  section.puffs
+    for puff,count in data.puffs
+      case count
+        when 0
+          +puff(puff,'purple-bg')
+        when 1
+          +puff(puff,'teal-bg')
+        when 2
+          +puff(puff,'darkblue-bg')        
+    include ../partials/signup
+    include ../partials/video
+    .cf
+    for puff,count in data.puffs
+      case count
+        when 3
+          +puff(puff,'darkblue-bg')
+        when 4
+          +puff(puff,'teal-bg')
+        when 5
+          +puff(puff,'purple-bg')   
+
+  include ../partials/instagram
+  include ../partials/membership
+
+block head
+  script(src='js/client.js')

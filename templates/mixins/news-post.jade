@@ -1,0 +1,38 @@
+mixin news-post(visible)
+  if visible
+    article
+  else
+    article.hidden
+  
+      .contracted-holder
+        .col4-6
+          .news-date
+            if post.publishedDate
+              | #{post._.publishedDate.format('DD-MM-YYYY')}
+          .news-title
+            h1 #{post.title}
+          .news-text
+            != post.content.brief
+        .col1-6
+          .news-image
+            if post.image.exists
+              img(src=post._.image.fit(1800,1280)).img-contracted
+        .col1-6
+          .news-button
+            img(src='img/arrow-expand.png', class='news-expand')
+      .expanded-holder
+        .col1-6
+          .news-date
+            if post.publishedDate
+              | #{post._.publishedDate.format('DD-MM-YYYY')}
+        .col4-6
+          .news-title
+            h1 #{post.title}
+        .col1-6
+          .news-button
+            img(src='img/arrow-contract.png', class='news-contract')
+        .content
+          if post.image.exists
+            img(src=post._.image.fit(1800,1280)).img-expanded
+          .news-text
+            != post.content.extended

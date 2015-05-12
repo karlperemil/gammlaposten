@@ -1,0 +1,57 @@
+.instagram
+  background-color: $lightgrey
+  +below(400px)
+    padding: 1em
+  p
+    color: $black
+    padding: 0 1em
+  h3
+    padding: 0 .5em
+  cf()
+
+.insta-load
+  background: #ffffff00 url('/img/insta-expand.png') no-repeat
+  background-size: 42px 29px
+  display: block
+  margin: 0 auto 1.3em
+  width: 43px
+  height: 27px
+  padding: 0
+  cursor: pointer
+  +below(400px)
+    margin: 1em auto 0.3em auto
+  &:hover
+    opacity(0.5)
+
+.instagram-header
+  display: block
+  color: $purple
+  margin: .5em auto
+  text-align: center
+  margin-bottom: 0.2em;
+
+.insta-ingress
+  margin: auto
+  max-width: 650px
+  width: 100%
+  text-align: center
+
+.instagram-holder
+  text-align: center
+  margin: 1em auto
+  line-height: 0
+  max-width: 1000px
+  cf()
+
+.insta-link
+  col(1/4, offset:0, gutter:0, cycle: 4)
+  padding: .7em
+  img
+    max-width: 100%
+    border: 4px solid transparent
+    border: 4px solid rgba(0, 0, 0, 0)
+    &:hover
+      border: 4px solid black
+  +below(700px)
+    col(1/2, uncycle: 4, cycle: 2)
+    padding: .3em

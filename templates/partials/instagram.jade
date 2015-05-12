@@ -1,0 +1,16 @@
+section.instagram#instagram
+	h3.instagram-header(data-id='home_insta_header') !{copy.home_insta_header}
+	p.insta-ingress(data-id='home_insta_ingress') !{copy.home_insta_ingress}
+	if !data.instagram
+		h2 inga instagram bilder ännu :(
+	else
+		.instagram-holder
+			for insta,index in data.instagram
+				if index < 8
+					a(href='#{insta.link}' target='_blank').insta-link
+						img(src='#{insta.images.low_resolution.url}')
+				else
+					a(href='#{insta.link}' target='_blank').insta-link.hidden
+						img(src='#{insta.images.low_resolution.url}')
+		if data.instagram.length > 8
+			.insta-load(id='insta-load')

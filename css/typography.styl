@@ -1,0 +1,86 @@
+font-main = 'Times New Roman', Times, Serif
+font-heading = 'HelveticaNeue-BoldCond'
+font-button = 'HelveticaNeue-Bold'
+font-form = 'HelveticaNeue-Roman'
+
+body
+  text-rendering: optimizeLegibility
+  line-height: 1.4
+  font-family: font-main
+  letter-spacing: 0
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  color: white
+
+
+h1, h2, h3
+  line-height: 1.3
+  font-family: font-heading
+
+h1
+  font-size: 4em
+  line-height: 1em
+
+h2
+  font-size: 2.2em
+
+h3
+  font-size: 2em
+
+h4
+  font-size: 1.3em
+
+small
+  font-size: 0.75em
+  line-height: 1.2
+  display: block
+
+.times
+  font-family: font-main
+
+.bold, strong, b
+  font-weight: bold
+
+em, i
+  font-style: italic
+
+.helvetica
+  font-family: font-heading
+
+.teal
+  color: $teal
+
+.purple
+  color: $purple
+
+body
+  +above('xl')
+    font-size: 22px
+
+  +below('xl')
+    font-size: 20px
+
+  +below('l')
+    font-size: 18px
+
+  +below('s')
+    font-size: 16px
+
+  +below('xs')
+    font-size: 14px
+
+blockquote
+  text-align: center
+  p
+    font-size: 2em
+    color: $teal
+    display: inline
+    font-family: font-heading
+    padding: auto 2em
+    width: 100%
+    &:before
+      display: inline
+      content: '”'
+    &:after
+      display: inline
+      content: '”'
