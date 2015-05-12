@@ -21,7 +21,7 @@ function start() {
     'favicon': 'public/favicon.ico',
     'views': 'templates/views',
     'view engine': 'jade',
-    'mongo': process.env.MONGOHQ_URL || 'mongodb://localhost/gammlaposten/',
+    'mongo': process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://localhost/gamlaposten/',
     'auto update': true,
     'session': true,
     'auth': true,
