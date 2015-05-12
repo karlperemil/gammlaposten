@@ -13,7 +13,6 @@ assign         = require 'lodash.assign'
 watchify       = require 'watchify'
 browserify     = require 'browserify'
 gulp_browerify = require 'gulp-browserify'
-reload         = browsersync.reload
 uglify         = require 'gulp-uglify'
 babel          = require 'gulp-babel'
 
@@ -66,7 +65,6 @@ gulp.task 'stylus', ->
   gulp.src('./css/app.styl')
   .pipe stylus(use: [nib(), jeet(), rupture()], compress: on, sourcemap: {inline: on, sourceRoot: '../../css'})
   .pipe gulp.dest('./public/styles')
-  .pipe reload(stream: yes)
 
 gulp.task 'nodemon', ->
   nodemon
