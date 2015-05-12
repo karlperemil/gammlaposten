@@ -40,18 +40,10 @@ exports = module.exports = function(app) {
 
 	// Views
 	app.get('/', routes.views.index);
-	app.get('/berattelser', routes.views.berattelser);
-	app.get('/berattelser/:berattelse', routes.views.berattelse);
-	app.get('/ambassador', routes.views.ambassador.get);
-	app.get('/dela-med-dig', routes.views.story.get);
 
 	//posts
 	app.post('/copy', actcopy.post);
 	app.get('/copy', actcopy.get);
-  app.post('/signup', routes.views.signup);
-  app.post('/story', routes.views.story.post);
-  app.post('/ambassador', routes.views.ambassador.post);
-  app.post('/helps', routes.views.help)
 
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

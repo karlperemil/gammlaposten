@@ -2,8 +2,6 @@
 // customising the .env file in your project's root folder.
 require('dotenv').load();
 require('coffee-script/register');
-var throng = require('throng');
-var WORKERS = process.env.WEB_CONCURRENCY || 1;
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -12,14 +10,6 @@ function start() {
 
   // Require keystone
   var keystone = require('keystone');
-
-  var mandrill = require('mandrill-api/mandrill');
-  var mandrill_client = new mandrill.Mandrill(process.env.MANDRILL);
-
-  if(process.env.NODE_ENV != 'dev' && process.env.NODE_ENV != 'development'){
-    bugsnag = require("bugsnag");
-    bugsnag.register("0104eda0c01d89cc0beae8761a1001f3");
-  }
 
   keystone.init({
     'name': 'Vision',
@@ -75,10 +65,7 @@ function start() {
   // Configure the navigation bar in Keystone's Admin UI
 
   keystone.set('nav', {
-    'Berättelser': 'posts',
-    'Sidor': 'pages',
-    'Puffar': 'puffs',
-    'Copy': 'copies'
+    'Nyheter': 'posts'
   });
 
   // Start Keystone to connect to your database and initialise the web server
@@ -86,8 +73,3 @@ function start() {
   keystone.start();
 
 };
-
-throng(start, {
-  workers: WORKERS,
-  lifetime: Infinity
-});
