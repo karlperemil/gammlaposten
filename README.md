@@ -1,19 +1,5 @@
-vision-framsoc
+#Gammlaposten
 
-base: unf-bryt
+With:
 
-==============
-
-DEP:
-
-MongoDB (brew update, brew install mongodb)
-
-Gulp (npm install gulp -g)
-
-1. skapa .env fil, variablerna finns på heroku settings
-
-2. $ -> npm install
-
-3. $ -> gulp
-
-http://keystonejs.com/
+Keystone, Stylus, Rupture, Jeet, Gulp
