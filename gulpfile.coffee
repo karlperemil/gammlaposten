@@ -5,7 +5,6 @@ nib            = require 'nib'
 jeet           = require 'jeet'
 rupture        = require 'rupture'
 sourcemaps     = require 'gulp-sourcemaps'
-browsersync    = require('browser-sync')
 nodemon        = require 'gulp-nodemon'
 source         = require 'vinyl-source-stream'
 buffer         = require 'vinyl-buffer'
