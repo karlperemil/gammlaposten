@@ -22,7 +22,7 @@ var _ = require('underscore'),
 	keystone = require('keystone'),
 	middleware = require('./middleware'),
 	importRoutes = keystone.importer(__dirname),
-	actcopy = require('./actcopy'),
+	actcopy = require('act-copy/route'),
 	bodyParser = require('body-parser')
 
 // Common Middleware

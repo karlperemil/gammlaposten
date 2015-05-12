@@ -15,14 +15,6 @@ exports = module.exports = function(req, res) {
     instagram: []
   };
 
-  view.on('init',function(next){
-    var q= keystone.list('Puff').model.find().sort('place');
-    q.exec(function(err,results){
-      locals.data.puffs = results;
-      next(err);
-    });
-  });
-
   var getInstagramData = false;
 
   var date = new Date();

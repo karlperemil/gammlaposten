@@ -1,4 +1,4 @@
-var actcopy = require('./modules/actcopy.js');
+var actcopy = require('act-copy/client');
 var $ = require('jquery');
 
 $(document).ready(function() {

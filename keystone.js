@@ -73,3 +73,5 @@ function start() {
   keystone.start();
 
 };
+
+start();

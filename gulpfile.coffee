@@ -16,6 +16,7 @@ browserify     = require 'browserify'
 gulp_browerify = require 'gulp-browserify'
 reload         = browsersync.reload
 uglify         = require 'gulp-uglify'
+babel          = require 'gulp-babel'
 
 require('dotenv').load(silent: true)
 
@@ -25,7 +26,7 @@ bundle = (filenames) ->
   .pipe(source('client.js'))
   .pipe(buffer())
   .pipe(sourcemaps.init({loadMaps: true}))
-  #.pipe(babel())
+  .pipe(babel({compact:false}))
   #.pipe(uglify())
   .pipe(sourcemaps.write('./'))
   .pipe(gulp.dest('./public/js'))
@@ -66,7 +67,7 @@ gulp.task 'stylus', ->
   gulp.src('./css/app.styl')
   .pipe stylus(use: [nib(), jeet(), rupture()], compress: on, sourcemap: {inline: on, sourceRoot: '../../css'})
   .pipe gulp.dest('./public/styles')
-  #.pipe reload(stream: yes)
+  .pipe reload(stream: yes)
 
 gulp.task 'nodemon', ->
   nodemon
@@ -78,7 +79,6 @@ gulp.task 'nodemon', ->
 # Default gulp task to run
 gulp.task 'default', ['stylus','assets', 'watch','nodemon']
 gulp.task 'watch',   ['watchTemplates', 'watchAssets', 'watchStylus','frontend-js']
-gulp.task 'server',  ['stylus', 'watch', 'assets','server','nodemon']
 gulp.task 'build', ['stylus','assets','js-build','js-build-admin']
 
 gulp.task 'watchAssets', ->

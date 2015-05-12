@@ -1,42 +1,43 @@
 extends ../layouts/default
-
 include ../mixins/header
-include ../mixins/puff
 
 block facebook
-  meta(property="og:site_name" content="Vad ska du och dina kollegor förändra på er arbetsplats?")
-  meta(property="og:title" content="Framtidenssocialtjänst")
+  meta(property="og:site_name" content="Gammla Posten på Koster")
+  meta(property="og:title" content="Gammla Posten")
   meta(property="og:type" content="article")
-  meta(property="og:url" content="http://www.framtidenssocialtjanst.se")
-  meta(property="og:image" content="http://www.framtidenssocialtjanst.se/img/facebook-og.jpg")
+  meta(property="og:url" content="http://www.gammlaposten.se")
+  meta(property="og:image" content="http://www.gammlaposten.se/img/facebook-og.jpg")
   meta(property="og:locale" content="sv_SE")
-  meta(property="og:description" content="Vi har samlat verktyg och berättelser från medarbetare i socialtjänsten som har tagit initiativ för att förbättra arbetsmiljön. Vad behöver bli bättre på din arbetsplats?")  
-  
-block content
-  +header('home')
-  section.puffs
-    for puff,count in data.puffs
-      case count
-        when 0
-          +puff(puff,'purple-bg')
-        when 1
-          +puff(puff,'teal-bg')
-        when 2
-          +puff(puff,'darkblue-bg')        
-    include ../partials/signup
-    include ../partials/video
-    .cf
-    for puff,count in data.puffs
-      case count
-        when 3
-          +puff(puff,'darkblue-bg')
-        when 4
-          +puff(puff,'teal-bg')
-        when 5
-          +puff(puff,'purple-bg')   
+  meta(property="og:description" content="Upplev havet och lugnet mitt i hjärtat av nordkoster")
 
-  include ../partials/instagram
-  include ../partials/membership
+block content
+  +header()
+  h1 Gamla Posten
+  p Här kan man va
+
+  h1 Om Koster
+  p info
+
+  h1 Historia
+  p history yo
+
+  h1 Länkar
+  p Expidition koster
+  p Tidtabell för kosteröarna
+  p Kosteröarna
+
+  h1 karta
+  p bild på karta
+
+  h1 hitta hit
+  p info och google maps
+
+  h1 lägenheter
+
+  h2 Södra
+  h2 Östra
+  h2 Västra
+  h2 Annexet
 
 block head
   script(src='js/client.js')

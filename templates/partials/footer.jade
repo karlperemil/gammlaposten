@@ -1,17 +1,8 @@
 include ../mixins/social
 
-footer.footer: .wrapper.is-wide
-  .footer-contact
-    p.footer-title(data-id='footer_phone') !{copy.footer_phone}
-    img(src='/img/phone@2x.png').footer-phone-image
-    h3.footer-phone.phone-number(data-id='footer_phone_number') !{copy.footer_phone_number}
-    p.footer-description(data-id='footer_phone_2') !{copy.footer_phone_2}
-    
-  .footer-middle
-    p.teal(data-id='footer_p') !{copy.footer_p}
-    
-  .footer-share
-    +share-buttons("http://framtidenssocialtjanst.se", copy.share_facebook_title, copy.share_twitter)
+footer.footer
+  h3 footer
+  p Gamla Posten - Åleviksvägen 2 - Västra Bryggan - Nordkoster- pg 649 47 67-4 
     
   if user && user.canAccessKeystone  
     .admin-menu

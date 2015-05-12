@@ -1,24 +1,14 @@
 mixin header(page)
-  - var headerclass = 'header-' + page
-  .header(class='#{headerclass}')
-    .header-menu
-      a.header-menu-item.is-home(href='/') #{copy.menu4}
-      a.header-menu-item.is-berattelser(href='/berattelser') !{copy.menu1}
-      a.header-menu-item.is-story(href='/dela-med-dig') !{copy.menu2}
-      a.header-menu-item.is-ambassador(href='/ambassador') !{copy.menu3}
-    .header-content
-      a(href='http://vision.se/socialtjanst', target='_blank'): img.header-logo(src='/img/logo3-white.png')
-      h3.times.bold Nu bygger vi
-      h1 
-        | Framtidens<br>Socialtjänst
-      case page
-        when 'home'
-          h4.times(data-id='header_home') !{copy.header_home}
-        when 'story'
-          h4.times(data-id='header_story') !{copy.header_story}
-        when 'berattelse'
-          h4.times(data-id='header_berattelse') !{copy.header_berattelse}
-        when 'berattelser'
-          h4.times(data-id='header_berattelser') !{copy.header_berattelser}
-        when 'ambassador'
-          h4.times(data-id='header_ambassador') !{copy.header_ambassador}
+  header
+    .menu
+      a.menu-item Gamla Posten
+      .menu-divider
+      a.menu-item Nyheter
+      a.menu-item Hitta hit
+      a.menu-item Södra
+      a.menu-item Östra
+      a.menu-item Västra
+      a.menu-item Annexet
+
+  button Click Here
+

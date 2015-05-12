@@ -1,0 +1,32 @@
+.menu
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  width: 100%
+  background: rgba($black,0.95)
+
+.menu-item
+  font-family: font-form
+  display: inline-block
+  padding: 1em 2em
+  cursor: pointer
+  color: #DEDEDE
+  transition(all, .4s, ease)
+  &:hover
+    text-decoration: none
+    color: $black
+    background: white
+  &.is-selected
+    color: $black
+    background: $grey
+  &:nth-child(1)
+    margin-right: -0.3em
+
+.menu-divider
+  display: inline-block
+  letter-spacing: 0
+  height: 2em
+  background: #515151
+  width: .05em
+  vertical-align: middle
