@@ -27,12 +27,7 @@ exports.initLocals = function(req, res, next) {
 	locals.user = req.user;
 	locals._ = _;
 
-	var q = keystone.list('Copy').model.find();
-	q.exec(function(err,results){
-		locals.copy = results[results.length-1];
-		next(err);
-	}.bind(this))
-
+	next();
 };
 
 

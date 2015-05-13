@@ -15,6 +15,17 @@ exports = module.exports = function(req, res) {
     instagram: []
   };
 
+  view.render('index');
+  return;
+
+  var q = keystone.list('Post').model.find({
+    state: 'published'
+  });
+  q.exec(function(err,result){
+    locals.data.news = result;
+    next(err);
+  });
+
   var getInstagramData = false;
 
   var date = new Date();

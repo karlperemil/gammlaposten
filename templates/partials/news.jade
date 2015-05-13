@@ -1,0 +1,7 @@
+if data.news
+  section.news
+    for article in data.news
+      article
+        h1 #{article.title}
+        img(src='#{article._.image.fit(800,600)}')
+        p #{article.content}

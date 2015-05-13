@@ -27,6 +27,7 @@ var _ = require('underscore'),
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
+keystone.pre('routes', actcopy.addCopyModel);
 keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
@@ -37,13 +38,11 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function(app) {
 	app.use(bodyParser.json());
+	actcopy.connect(app);
 
 	// Views
 	app.get('/', routes.views.index);
 
-	//posts
-	app.post('/copy', actcopy.post);
-	app.get('/copy', actcopy.get);
 
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

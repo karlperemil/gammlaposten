@@ -16,8 +16,6 @@ Post.add({
   state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
   publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
   image: { type: Types.CloudinaryImage },
-  quote: { type: String, inital: true, required: false, default: "" },
-  pdf: { type: Types.CloudinaryImage },
   content: { type: Types.Html, wysiwyg: true, height: 400 }
 });
 

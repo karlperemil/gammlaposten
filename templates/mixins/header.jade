@@ -11,9 +11,9 @@ mixin header(page)
       a.menu-item Annexet
     .header-bg
       .header-tagline
-        h1 Gamla Posten
-        h3 Här kan man va
-        button.is-white Boka Här
+        h1(data-id='header_h1') !{copy.header_h1}
+        h3(data-id='header_h3') !{copy.header_h3}
+        .button.is-white(data-id='header_button') !{copy.header_button}
 
-  button Click Here
+  .button Click Here
 

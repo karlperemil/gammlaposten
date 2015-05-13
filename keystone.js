@@ -12,8 +12,8 @@ function start() {
   var keystone = require('keystone');
 
   keystone.init({
-    'name': 'Vision',
-    'brand': 'FramSoc',
+    'name': 'Gamla Posten',
+    'brand': 'Koster',
     'port': process.env.PORT || 3001,
     'less': 'public',
     'static': 'public',

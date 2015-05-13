@@ -15,6 +15,8 @@ browserify     = require 'browserify'
 gulp_browerify = require 'gulp-browserify'
 uglify         = require 'gulp-uglify'
 babel          = require 'gulp-babel'
+actcopy        = require 'act-copy/gulp'
+argv           = require('yargs').argv
 
 require('dotenv').load(silent: true)
 
@@ -59,6 +61,17 @@ gulp.task "js-build-admin", ->
   .pipe(gulp.dest("./public/js"))
 
 
+gulp.task 'generate-copy', ->
+  actcopy.createModel('copy/sv.yml','models/Copy.js')
+
+
+gulp.task 'copy-seed', =>
+  if argv.copyv == undefined
+    console.log 'Error:\n  no --copyv= parameter'
+    return
+  actcopy.createSeed('copy/sv.yml','updates/' + argv.copyv + '-copy.js')
+
+
 
 # Get one .styl file and render
 gulp.task 'stylus', ->
@@ -74,9 +87,9 @@ gulp.task 'nodemon', ->
     env: 'NODE_ENV': 'development'
 
 # Default gulp task to run
-gulp.task 'default', ['stylus','assets', 'watch','nodemon']
-gulp.task 'watch',   ['watchTemplates', 'watchAssets', 'watchStylus','frontend-js']
-gulp.task 'build', ['stylus','assets','js-build','js-build-admin']
+gulp.task 'default', ['build', 'watch','nodemon']
+gulp.task 'watch',   ['watchTemplates', 'watchAssets', 'watchStylus','frontend-js','watchCopy']
+gulp.task 'build', ['stylus','assets','js-build','js-build-admin','generate-copy']
 
 gulp.task 'watchAssets', ->
   gulp.watch './assets/**/*', ['assets']
@@ -90,3 +103,6 @@ gulp.task 'watchStylus', ->
 
 gulp.task 'watchTemplates', ->
   gulp.watch './templates/**/*.jade'
+
+gulp.task 'watchCopy', ->
+  gulp.watch './copy/sv.yml', ['generate-copy']
