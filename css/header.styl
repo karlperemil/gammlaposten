@@ -19,7 +19,8 @@
   display: inline-block
   padding: 1em 2em
   cursor: pointer
-  color: #DEDEDE
+  color: white
+  font-size: .8em
   transition(all, .4s, ease)
   &:hover
     text-decoration: none
@@ -30,7 +31,8 @@
     background: $grey
   &:nth-child(1)
     margin-right: -0.3em
-    
+  &.menu-home
+    font-family: font-heading
 
 .menu-divider
   display: inline-block
@@ -61,8 +63,40 @@ header
   h1,h3
     color: white
 
+.menu-button
+  float:right
+  padding: .76em
+  cursor: pointer
+  background: none
+  display: none
+  .menu-button-bar
+    width: 1.5em
+    height: .1em
+    background: white
+    margin-bottom: .4em
+    &:last-child
+      margin-bottom: 0
+  &:hover
+    background: white
+    .menu-button-bar
+      background: $black
+
 .header-tagline
   align(both)
 
-html, body
-  height: 100%
++below(1200px)
+  .menu-item
+    padding: 1em 1.5em
++below(1000px)
+  .menu-item
+    padding: 1em 1em
+
++below(710px)
+  .menu-item
+    display: none
+    &.menu-home
+      display: inline-block
+  .menu-divider
+    display: none
+  .menu-button
+    display: block

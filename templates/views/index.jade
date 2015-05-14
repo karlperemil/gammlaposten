@@ -13,33 +13,10 @@ block facebook
 block content
   +header()
   include ../partials/news
-
-  h1 Gamla Posten
-  p Här kan man va
-
-  h1 Om Koster
-  p info
-
-  h1 Historia
-  p history yo
-
-  h1 Länkar
-  p Expidition koster
-  p Tidtabell för kosteröarna
-  p Kosteröarna
-
-  h1 karta
-  p bild på karta
-
-  h1 hitta hit
-  p info och google maps
-
-  h1 lägenheter
-
-  h2 Södra
-  h2 Östra
-  h2 Västra
-  h2 Annexet
+  include ../partials/about
+  include ../partials/sodra
+  include ../partials/find
+  include ../partials/boka
 
 block head
   script(src='js/client.js')

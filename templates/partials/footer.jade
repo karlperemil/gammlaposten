@@ -1,9 +1,6 @@
 include ../mixins/social
 
 footer.footer
-  h3 footer
-  p Gamla Posten - Åleviksvägen 2 - Västra Bryggan - Nordkoster- pg 649 47 67-4 
-    
   if user && user.canAccessKeystone  
     .admin-menu
       a(href='/keystone', target='_blank')

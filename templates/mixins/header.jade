@@ -1,19 +1,23 @@
 mixin header(page)
-  header
+  header#header
     .menu.is-transparent
-      a.menu-item Gamla Posten
+      a.menu-item.menu-home#header-link Gamla Posten
       .menu-divider
-      a.menu-item Nyheter
-      a.menu-item Hitta hit
-      a.menu-item Södra
-      a.menu-item Östra
-      a.menu-item Västra
-      a.menu-item Annexet
+      a.menu-item#nyheter-link Nyheter
+      a.menu-item#historia-link Historia
+      a.menu-item#sodra-link Södra
+      a.menu-item#ostra-link Östra
+      a.menu-item#vastra-link Västra
+      a.menu-item#annexet-link Annexet
+      a.menu-item#hitta-hit-link Hitta hit
+      a.menu-item#boka-link Boka
+      .menu-button
+        .menu-button-bar
+        .menu-button-bar
+        .menu-button-bar
     .header-bg
       .header-tagline
         h1(data-id='header_h1') !{copy.header_h1}
         h3(data-id='header_h3') !{copy.header_h3}
-        .button.is-white(data-id='header_button') !{copy.header_button}
-
-  .button Click Here
+        .button.is-white.boka-link(data-id='header_button') !{copy.header_button}
 

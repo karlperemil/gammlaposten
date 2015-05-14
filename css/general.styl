@@ -1,5 +1,9 @@
 html
   box-sizing: border-box
+  color: $black
+
+html, body
+  height: 100%
 
 button
   outline: 0
@@ -10,16 +14,22 @@ button
   color: white
   background: $yellow
   cursor: pointer
-  font-family: folio-bold
+  font-family: font-form
   &:hover
     background: $pink-light
 
 img
   max-width: 100%
 
+hr
+  margin: 1em auto
+  width: 100%
+  border: none
+  border-top: .15em solid $black
+
 a
   text-decoration: none
-  color: white
+  color: #1CBBF0
 
 a:hover
   text-decoration: underline
@@ -29,6 +39,10 @@ a:hover
 
 .hidden
   display: none
+
+.container
+  max-width: 800px
+  margin: auto
 
 .visible
   display: inherit
